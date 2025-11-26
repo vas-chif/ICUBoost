@@ -1,20 +1,208 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hHh lpR fFf">
+    <q-header elevated class="bg-primary text-white q-pa-md">
       <q-toolbar>
+        <!-- Menu Button -->
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
+        <!-- Logo & App Name -->
+        <q-toolbar-title class="row items-center no-wrap">
+          <span class="gt-xs">{{ t('layout.appName') }}</span>
+        </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <!-- Search Bar (Desktop) -->
+        <q-input
+          v-model="calculatorStore.searchQuery"
+          dark
+          dense
+          standout
+          :placeholder="t('common.search')"
+          class="gt-sm"
+          style="max-width: 400px"
+        >
+          <template #prepend>
+            <q-icon name="search" />
+          </template>
+          <template v-if="calculatorStore.searchQuery" #append>
+            <q-icon name="close" class="cursor-pointer" @click="calculatorStore.searchQuery = ''" />
+          </template>
+        </q-input>
+
+        <!-- Language Selector -->
+        <q-btn-dropdown flat dense :label="currentLocale.toUpperCase()" class="q-ml-md">
+          <q-list>
+            <q-item v-close-popup clickable @click="changeLocale('en-US')">
+              <q-item-section avatar>
+                <q-avatar size="24px">🇬🇧</q-avatar>
+              </q-item-section>
+              <q-item-section>English</q-item-section>
+            </q-item>
+
+            <q-item v-close-popup clickable @click="changeLocale('it-IT')">
+              <q-item-section avatar>
+                <q-avatar size="24px">🇮🇹</q-avatar>
+              </q-item-section>
+              <q-item-section>Italiano</q-item-section>
+            </q-item>
+
+            <q-item v-close-popup clickable @click="changeLocale('ru-RU')">
+              <q-item-section avatar>
+                <q-avatar size="24px">🇷🇺</q-avatar>
+              </q-item-section>
+              <q-item-section>Русский</q-item-section>
+            </q-item>
+
+            <q-item v-close-popup clickable @click="changeLocale('fr-FR')">
+              <q-item-section avatar>
+                <q-avatar size="24px">🇫🇷</q-avatar>
+              </q-item-section>
+              <q-item-section>Français</q-item-section>
+            </q-item>
+
+            <q-item v-close-popup clickable @click="changeLocale('ro-RO')">
+              <q-item-section avatar>
+                <q-avatar size="24px">🇷🇴</q-avatar>
+              </q-item-section>
+              <q-item-section>Română</q-item-section>
+            </q-item>
+
+            <q-item v-close-popup clickable @click="changeLocale('de-DE')">
+              <q-item-section avatar>
+                <q-avatar size="24px">🇩🇪</q-avatar>
+              </q-item-section>
+              <q-item-section>Deutsch</q-item-section>
+            </q-item>
+
+            <q-item v-close-popup clickable @click="changeLocale('es-ES')">
+              <q-item-section avatar>
+                <q-avatar size="24px">🇪🇸</q-avatar>
+              </q-item-section>
+              <q-item-section>Español</q-item-section>
+            </q-item>
+
+            <q-item v-close-popup clickable @click="changeLocale('pt-PT')">
+              <q-item-section avatar>
+                <q-avatar size="24px">🇵🇹</q-avatar>
+              </q-item-section>
+              <q-item-section>Português</q-item-section>
+            </q-item>
+
+            <q-item v-close-popup clickable @click="changeLocale('ja-JP')">
+              <q-item-section avatar>
+                <q-avatar size="24px">🇯🇵</q-avatar>
+              </q-item-section>
+              <q-item-section>日本語</q-item-section>
+            </q-item>
+
+            <q-item v-close-popup clickable @click="changeLocale('ar-SA')">
+              <q-item-section avatar>
+                <q-avatar size="24px">🇸🇦</q-avatar>
+              </q-item-section>
+              <q-item-section>العربية</q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+      </q-toolbar>
+
+      <!-- Search Bar (Mobile) -->
+      <q-toolbar v-if="showMobileSearch" class="lt-md">
+        <q-input
+          v-model="calculatorStore.searchQuery"
+          dark
+          dense
+          standout
+          :placeholder="t('common.search')"
+          class="full-width"
+        >
+          <template #prepend>
+            <q-icon name="search" />
+          </template>
+          <template v-if="calculatorStore.searchQuery" #append>
+            <q-icon name="close" class="cursor-pointer" @click="calculatorStore.searchQuery = ''" />
+          </template>
+        </q-input>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <!-- Drawer Navigation -->
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered overlay>
       <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+        <q-item-label header class="text-primary">
+          <q-icon name="calculate" class="q-mr-sm" />
+          {{ t('layout.calculators') }}
+        </q-item-label>
 
-        <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
+        <!-- Mechanical Power Calculator -->
+        <q-item
+          clickable
+          :active="calculatorStore.activeCalculator === 'mechanical-power'"
+          active-class="bg-primary text-white"
+          @click="handleCalculatorClick('mechanical-power')"
+        >
+          <q-item-section avatar>
+            <q-icon
+              name="air"
+              :color="calculatorStore.activeCalculator === 'mechanical-power' ? 'white' : 'primary'"
+            />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{ t('calculators.mechanicalPower.title') }}</q-item-label>
+            <q-item-label
+              caption
+              :class="calculatorStore.activeCalculator === 'mechanical-power' ? 'text-white' : ''"
+              >{{ t('calculators.mechanicalPower.description') }}</q-item-label
+            >
+          </q-item-section>
+        </q-item>
+
+        <!-- Respiratory Quotient Calculator -->
+        <q-item
+          clickable
+          :active="calculatorStore.activeCalculator === 'respiratory-quotient'"
+          active-class="bg-secondary text-white"
+          @click="handleCalculatorClick('respiratory-quotient')"
+        >
+          <q-item-section avatar>
+            <q-icon
+              name="favorite"
+              :color="
+                calculatorStore.activeCalculator === 'respiratory-quotient' ? 'white' : 'secondary'
+              "
+            />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{ t('calculators.respiratoryQuotient.title') }}</q-item-label>
+            <q-item-label
+              caption
+              :class="
+                calculatorStore.activeCalculator === 'respiratory-quotient' ? 'text-white' : ''
+              "
+              >{{ t('calculators.respiratoryQuotient.description') }}</q-item-label
+            >
+          </q-item-section>
+        </q-item>
+
+        <q-separator class="q-my-md" />
+
+        <!-- Settings -->
+        <q-item clickable>
+          <q-item-section avatar>
+            <q-icon name="settings" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{ t('layout.settings') }}</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <!-- About -->
+        <q-item clickable>
+          <q-item-section avatar>
+            <q-icon name="info" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{ t('layout.about') }}</q-item-label>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -25,57 +213,51 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import EssentialLink, { type EssentialLinkProps } from 'components/EssentialLink.vue';
+import { ref, provide } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useCalculatorStore } from 'src/stores/calculator-store';
 
-const linksList: EssentialLinkProps[] = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
-  },
-];
+const { t, locale } = useI18n();
+const calculatorStore = useCalculatorStore();
 
 const leftDrawerOpen = ref(false);
+const showMobileSearch = ref(false);
+const currentLocale = ref(locale.value);
 
-function toggleLeftDrawer() {
+function toggleLeftDrawer(): void {
   leftDrawerOpen.value = !leftDrawerOpen.value;
+}
+
+// Provide toggleLeftDrawer per permettere accesso da child components
+provide('toggleLeftDrawer', toggleLeftDrawer);
+
+/**
+ * CONCETTO: Navigazione drawer-calculator
+ * - Se dialog chiuso: apre calcolatore
+ * - Se dialog aperto: switcha calcolatore senza chiudere
+ * - Drawer rimane accessibile per navigare tra calcolatori
+ */
+function handleCalculatorClick(type: 'mechanical-power' | 'respiratory-quotient'): void {
+  if (calculatorStore.showDialog && calculatorStore.activeCalculator !== type) {
+    // Dialog aperto, switch senza chiudere
+    calculatorStore.navigateToCalculator(type);
+  } else if (!calculatorStore.showDialog) {
+    // Dialog chiuso, apri calcolatore
+    calculatorStore.openCalculator(type);
+  }
+  // Non chiudere drawer - permette navigazione multipla
+}
+
+function changeLocale(newLocale: string): void {
+  locale.value = newLocale;
+  currentLocale.value = newLocale;
+  localStorage.setItem('locale', newLocale);
+}
+
+// Load saved locale from localStorage
+const savedLocale = localStorage.getItem('locale');
+if (savedLocale) {
+  locale.value = savedLocale;
+  currentLocale.value = savedLocale;
 }
 </script>

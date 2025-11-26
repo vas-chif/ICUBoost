@@ -1,0 +1,103 @@
+/**
+ * German translations for ICUBoost
+ * Deutsche Übersetzungen für ICUBoost
+ */
+
+export default {
+  common: {
+    search: 'Suchen',
+    calculate: 'Berechnen',
+    reset: 'Zurücksetzen',
+    close: 'Schließen',
+    save: 'Speichern',
+    cancel: 'Abbrechen',
+    error: 'Fehler',
+    success: 'Erfolg',
+    warning: 'Warnung',
+    info: 'Information',
+  },
+
+  layout: {
+    appName: 'ICUBoost',
+    appDescription: 'Werkzeuge für die Intensivmedizin',
+    menu: 'Menü',
+    home: 'Startseite',
+    calculators: 'Rechner',
+    settings: 'Einstellungen',
+    about: 'Über',
+  },
+
+  calculators: {
+    mechanicalPower: {
+      title: 'Mechanische Leistung',
+      description: 'Berechnung der mechanischen Beatmungsleistung',
+      rr: 'Atemfrequenz (RR)',
+      rrUnit: 'Atemzüge/Min',
+      vte: 'Exspiratorisches Tidalvolumen (VTe)',
+      vteUnit: 'Liter',
+      picco: 'Spitzendruck',
+      piccoUnit: 'cmH₂O',
+      plateau: 'Plateaudruck',
+      plateauUnit: 'cmH₂O',
+      peep: 'PEEP',
+      peepUnit: 'cmH₂O',
+      result: 'Mechanische Leistung',
+      resultUnit: 'J/Min',
+      normalRange: 'Normal',
+      warningRange: 'Achtung',
+      criticalRange: 'Kritisch',
+      referenceRanges: 'Referenzbereiche',
+    },
+    respiratoryQuotient: {
+      title: 'Respiratorischer Quotient',
+      description: 'Berechnung des respiratorischen Quotienten (QR)',
+      pvco2: 'PvCO₂ (venöses CO₂)',
+      pvco2Unit: 'mmHg',
+      paco2: 'PaCO₂ (arterielles CO₂)',
+      paco2Unit: 'mmHg',
+      hb: 'Hämoglobin (HB)',
+      hbUnit: 'g/dL',
+      sao2: 'SaO₂ (arterielle Sättigung)',
+      sao2Unit: '%',
+      svo2: 'SvO₂ (venöse Sättigung)',
+      svo2Unit: '%',
+      pao2: 'PaO₂ (arterieller O₂)',
+      pao2Unit: 'mmHg',
+      pvo2: 'PvO₂ (venöser O₂)',
+      pvo2Unit: 'mmHg',
+      result: 'Respiratorischer Quotient',
+      resultUnit: 'ml-O₂/dL',
+      normalRange: 'Normal (aerob)',
+      abnormalRange: 'Außerhalb des Bereichs',
+      referenceRanges: 'Referenzbereiche',
+      metabolismTitle: 'QR - Stoffwechseltyp',
+      metabolismDescription:
+        'Der respiratorische Quotient zeigt den Stoffwechseltyp (aerob oder anaerob) basierend auf dem Verbrauch von Energiesubstraten an',
+      fatMetabolism: 'Fettstoffwechsel (aerob)',
+      mixedMetabolism: 'Gemischter Stoffwechsel',
+      carbMetabolism: 'Kohlenhydratstoffwechsel (aerob)',
+      anaerobicMetabolism: 'Anaerober Stoffwechsel',
+    },
+  },
+
+  validation: {
+    required: 'Pflichtfeld',
+    mustBePositive: 'Muss größer als Null sein',
+    outOfRange: 'Wert außerhalb des zulässigen Bereichs',
+    invalidNumber: 'Ungültige Zahl',
+    noNegativeNumbers: 'Negative Werte sind nicht zulässig',
+    maxDecimals: 'Zu viele Dezimalstellen',
+    maxPercentage: 'Prozentsatz darf 100% nicht überschreiten',
+    plateauLessThanPeak: 'Plateau muss ≤ Spitzendruck sein',
+    peepLessThanPlateau: 'PEEP muss ≤ Plateau sein',
+    pvco2GreaterThanPaco2: 'PvCO₂ muss > PaCO₂ sein',
+    sao2GreaterThanSvo2: 'SaO₂ muss > SvO₂ sein',
+    pao2GreaterThanPvo2: 'PaO₂ muss > PvO₂ sein',
+  },
+
+  errors: {
+    calculationFailed: 'Berechnungsfehler',
+    invalidInput: 'Ungültige Eingabe',
+    missingParameters: 'Fehlende Parameter',
+  },
+};

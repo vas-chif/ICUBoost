@@ -1,0 +1,103 @@
+/**
+ * Russian translations for ICUBoost
+ * Русские переводы для ICUBoost
+ */
+
+export default {
+  common: {
+    search: 'Поиск',
+    calculate: 'Рассчитать',
+    reset: 'Сброс',
+    close: 'Закрыть',
+    save: 'Сохранить',
+    cancel: 'Отмена',
+    error: 'Ошибка',
+    success: 'Успешно',
+    warning: 'Внимание',
+    info: 'Информация',
+  },
+
+  layout: {
+    appName: 'ICUBoost',
+    appDescription: 'Инструменты для интенсивной терапии',
+    menu: 'Меню',
+    home: 'Главная',
+    calculators: 'Калькуляторы',
+    settings: 'Настройки',
+    about: 'О программе',
+  },
+
+  calculators: {
+    mechanicalPower: {
+      title: 'Механическая мощность',
+      description: 'Расчет механической мощности вентиляции',
+      rr: 'Частота дыхания (RR)',
+      rrUnit: 'вдохов/мин',
+      vte: 'Дыхательный объем (VTe)',
+      vteUnit: 'литры',
+      picco: 'Пиковое давление',
+      piccoUnit: 'см H₂O',
+      plateau: 'Давление плато',
+      plateauUnit: 'см H₂O',
+      peep: 'PEEP',
+      peepUnit: 'см H₂O',
+      result: 'Механическая мощность',
+      resultUnit: 'Дж/мин',
+      normalRange: 'Норма',
+      warningRange: 'Осторожно',
+      criticalRange: 'Критично',
+      referenceRanges: 'Референсные диапазоны',
+    },
+    respiratoryQuotient: {
+      title: 'Дыхательный коэффициент',
+      description: 'Расчет дыхательного коэффициента (QR)',
+      pvco2: 'PvCO₂ (венозный CO₂)',
+      pvco2Unit: 'мм рт.ст.',
+      paco2: 'PaCO₂ (артериальный CO₂)',
+      paco2Unit: 'мм рт.ст.',
+      hb: 'Гемоглобин (HB)',
+      hbUnit: 'г/дл',
+      sao2: 'SaO₂ (артериальная сатурация)',
+      sao2Unit: '%',
+      svo2: 'SvO₂ (венозная сатурация)',
+      svo2Unit: '%',
+      pao2: 'PaO₂ (артериальный O₂)',
+      pao2Unit: 'мм рт.ст.',
+      pvo2: 'PvO₂ (венозный O₂)',
+      pvo2Unit: 'мм рт.ст.',
+      result: 'Дыхательный коэффициент',
+      resultUnit: 'мл-O₂/дл',
+      normalRange: 'Норма (аэробный)',
+      abnormalRange: 'Вне диапазона',
+      referenceRanges: 'Референсные диапазоны',
+      metabolismTitle: 'QR - Тип метаболизма',
+      metabolismDescription:
+        'Дыхательный коэффициент указывает на тип метаболизма (аэробный или анаэробный) на основе потребления энергетических субстратов',
+      fatMetabolism: 'Метаболизм жиров (аэробный)',
+      mixedMetabolism: 'Смешанный метаболизм',
+      carbMetabolism: 'Метаболизм углеводов (аэробный)',
+      anaerobicMetabolism: 'Анаэробный метаболизм',
+    },
+  },
+
+  validation: {
+    required: 'Обязательное поле',
+    mustBePositive: 'Должно быть больше нуля',
+    outOfRange: 'Значение вне допустимого диапазона',
+    invalidNumber: 'Недопустимое число',
+    noNegativeNumbers: 'Отрицательные значения не допускаются',
+    maxDecimals: 'Слишком много десятичных знаков',
+    maxPercentage: 'Процент не может превышать 100%',
+    plateauLessThanPeak: 'Plateau должно быть ≤ пикового давления',
+    peepLessThanPlateau: 'PEEP должно быть ≤ Plateau',
+    pvco2GreaterThanPaco2: 'PvCO₂ должно быть > PaCO₂',
+    sao2GreaterThanSvo2: 'SaO₂ должно быть > SvO₂',
+    pao2GreaterThanPvo2: 'PaO₂ должно быть > PvO₂',
+  },
+
+  errors: {
+    calculationFailed: 'Ошибка расчета',
+    invalidInput: 'Недопустимый ввод',
+    missingParameters: 'Отсутствуют параметры',
+  },
+};

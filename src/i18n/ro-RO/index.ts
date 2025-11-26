@@ -1,0 +1,103 @@
+/**
+ * Romanian translations for ICUBoost
+ * Traduceri în limba română pentru ICUBoost
+ */
+
+export default {
+  common: {
+    search: 'Căutare',
+    calculate: 'Calculează',
+    reset: 'Resetare',
+    close: 'Închide',
+    save: 'Salvează',
+    cancel: 'Anulează',
+    error: 'Eroare',
+    success: 'Succes',
+    warning: 'Atenție',
+    info: 'Informație',
+  },
+
+  layout: {
+    appName: 'ICUBoost',
+    appDescription: 'Instrumente pentru Terapie Intensivă',
+    menu: 'Meniu',
+    home: 'Acasă',
+    calculators: 'Calculatoare',
+    settings: 'Setări',
+    about: 'Despre',
+  },
+
+  calculators: {
+    mechanicalPower: {
+      title: 'Putere Mecanică',
+      description: 'Calculul puterii mecanice ventilatorii',
+      rr: 'Frecvență respiratorie (RR)',
+      rrUnit: 'respirații/min',
+      vte: 'Volum curent expirat (VTe)',
+      vteUnit: 'litri',
+      picco: 'Presiune de vârf',
+      piccoUnit: 'cmH₂O',
+      plateau: 'Presiune de platou',
+      plateauUnit: 'cmH₂O',
+      peep: 'PEEP',
+      peepUnit: 'cmH₂O',
+      result: 'Putere mecanică',
+      resultUnit: 'J/min',
+      normalRange: 'Normal',
+      warningRange: 'Atenție',
+      criticalRange: 'Critic',
+      referenceRanges: 'Intervale de referință',
+    },
+    respiratoryQuotient: {
+      title: 'Coeficient Respirator',
+      description: 'Calculul coeficientului respirator (QR)',
+      pvco2: 'PvCO₂ (CO₂ venos)',
+      pvco2Unit: 'mmHg',
+      paco2: 'PaCO₂ (CO₂ arterial)',
+      paco2Unit: 'mmHg',
+      hb: 'Hemoglobină (HB)',
+      hbUnit: 'g/dL',
+      sao2: 'SaO₂ (saturație arterială)',
+      sao2Unit: '%',
+      svo2: 'SvO₂ (saturație venoasă)',
+      svo2Unit: '%',
+      pao2: 'PaO₂ (O₂ arterial)',
+      pao2Unit: 'mmHg',
+      pvo2: 'PvO₂ (O₂ venos)',
+      pvo2Unit: 'mmHg',
+      result: 'Coeficient respirator',
+      resultUnit: 'ml-O₂/dL',
+      normalRange: 'Normal (aerob)',
+      abnormalRange: 'În afara intervalului',
+      referenceRanges: 'Intervale de referință',
+      metabolismTitle: 'QR - Tipul de metabolism',
+      metabolismDescription:
+        'Coeficientul respirator indică tipul de metabolism (aerob sau anaerob) pe baza consumului de substraturi energetice',
+      fatMetabolism: 'Metabolism lipidic (aerob)',
+      mixedMetabolism: 'Metabolism mixt',
+      carbMetabolism: 'Metabolism glucidic (aerob)',
+      anaerobicMetabolism: 'Metabolism anaerob',
+    },
+  },
+
+  validation: {
+    required: 'Câmp obligatoriu',
+    mustBePositive: 'Trebuie să fie mai mare decât zero',
+    outOfRange: 'Valoare în afara intervalului permis',
+    invalidNumber: 'Număr invalid',
+    noNegativeNumbers: 'Valorile negative nu sunt permise',
+    maxDecimals: 'Prea multe zecimale',
+    maxPercentage: 'Procentul nu poate depăși 100%',
+    plateauLessThanPeak: 'Plateau trebuie să fie ≤ presiunea de vârf',
+    peepLessThanPlateau: 'PEEP trebuie să fie ≤ Plateau',
+    pvco2GreaterThanPaco2: 'PvCO₂ trebuie să fie > PaCO₂',
+    sao2GreaterThanSvo2: 'SaO₂ trebuie să fie > SvO₂',
+    pao2GreaterThanPvo2: 'PaO₂ trebuie să fie > PvO₂',
+  },
+
+  errors: {
+    calculationFailed: 'Eroare la calcul',
+    invalidInput: 'Date de intrare invalide',
+    missingParameters: 'Parametri lipsă',
+  },
+};

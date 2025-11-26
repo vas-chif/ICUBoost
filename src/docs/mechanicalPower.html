@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mechanical Power & Quoziente Respiratorio Calculator</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    #container {
+      display: flex;
+      /* Utilizziamo un layout flessibile per posizionare i figli in modo orizzontale */
+    }
+
+    .section {
+      flex: 1;
+      /* La sezione occupa tutto lo spazio disponibile */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    #mp {
+      background-color: #c7c5c5;
+    }
+
+    #qr {
+      background-color: #d8d8d8;
+    }
+
+    .input-container label {
+      display: block;
+    }
+
+    .input-container input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    #button {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    #info {
+      font-family: "Times New Roman", Times, serif;
+      font-size: smaller;
+      padding-left: 10px;
+      font-weight: lighter;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <section id="mp" class="section">
+      <h1>Mechanical Power</h1>
+      <div class="input-container">
+        <label for="inputRR">RR: <input type="number" id="inputRR" /> </label>
+
+        <label for="inputVTe">
+          VTe in litri: <input type="number" id="inputVTe" />
+        </label>
+
+        <label for="inputPicco">
+          P.Picco:<input type="number" id="inputPicco" />
+        </label>
+
+        <label for="inputPlateau">
+          P.Plateau:<input type="number" id="inputPlateau" />
+        </label>
+
+        <label for="inputPeeP">
+          PeeP:<input type="number" id="inputPeeP" />
+        </label>
+      </div>
+      <button onclick="calculateMP()" id="button">Calcola MP</button>
+      <br />
+      <h3>
+        MP = <span id="showResultLabelMP">0</span> <span id="info">j/min</span>
+      </h3>
+
+    </section>
+
+    <section id="qr" class="section">
+      <h1>Quoziente Respiratorio</h1>
+      <div class="input-container">
+        <label for="inputPvCO2">
+          PvCO2: <input type="number" id="inputPvCO2" /></label>
+
+        <label for="inputPaCO2">
+          PaCO2: <input type="number" id="inputPaCO2" />
+        </label>
+
+        <label for="inputHB">
+          HB: <input type="number" id="inputHB" />
+        </label>
+
+        <label for="inputSaO2">
+          SaO2: <input type="number" id="inputSaO2" />
+        </label>
+
+        <label for="inputSvO2">
+          SvO2: <input type="number" id="inputSvO2" />
+        </label>
+
+        <label for="inputPaO2">
+          PaO2: <input type="number" id="inputPaO2" />
+        </label>
+
+        <label for="inputPvO2">
+          PvO2: <input type="number" id="inputPvO2" />
+        </label>
+      </div>
+      <button onclick="calculateQR()" id="button">Calcola QR</button>
+      <br />
+      <h3> QR = <span id="showResultLabelQR">0</span> <span id="info"> Range QR 0.7 -1 ml-O2/dl</span>
+      </h3>
+    </section>
+
+    <script>function calculateMP() {
+        // Recupera i valori dagli input
+        var RR = document.getElementById("inputRR").value;
+        var VTe = document.getElementById("inputVTe").value;
+        var Picco = document.getElementById("inputPicco").value;
+        var Plateau = document.getElementById("inputPlateau").value;
+        var PeeP = document.getElementById("inputPeeP").value;
+
+        // // Calcola il Mechanical Power
+        var MP = 0.098 * RR * VTe * (Picco - 0.5 * (Plateau - PeeP));
+
+        // Show the result
+        document.getElementById("showResultLabelMP").innerText = MP;
+      }
+
+      function calculateQR() {
+        // Recupera i valori dagli input
+        var PvCO2 = document.getElementById("inputPvCO2").value;
+        var PaCO2 = document.getElementById("inputPaCO2").value;
+        var HB = document.getElementById("inputHB").value;
+        var SaO2 = document.getElementById("inputSaO2").value;
+        var SvO2 = document.getElementById("inputSvO2").value;
+        var PaO2 = document.getElementById("inputPaO2").value;
+        var PvO2 = document.getElementById("inputPvO2").value;
+
+        // // Calcola il Mechanical Power
+        var QR =
+          (PvCO2 - PaCO2) /
+          ((HB * 1.36 * (SaO2 - SvO2)) / 100 + (PaO2 - PvO2) * 0.003);
+
+        // Show the result
+        document.getElementById("showResultLabelQR").innerText = QR;
+      }
+    </script>
+  </div>
+</body>
+
+</html>

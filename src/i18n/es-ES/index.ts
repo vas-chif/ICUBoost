@@ -1,0 +1,103 @@
+/**
+ * Spanish translations for ICUBoost
+ * Traducciones al español para ICUBoost
+ */
+
+export default {
+  common: {
+    search: 'Buscar',
+    calculate: 'Calcular',
+    reset: 'Restablecer',
+    close: 'Cerrar',
+    save: 'Guardar',
+    cancel: 'Cancelar',
+    error: 'Error',
+    success: 'Éxito',
+    warning: 'Advertencia',
+    info: 'Información',
+  },
+
+  layout: {
+    appName: 'ICUBoost',
+    appDescription: 'Herramientas para Cuidados Intensivos',
+    menu: 'Menú',
+    home: 'Inicio',
+    calculators: 'Calculadoras',
+    settings: 'Configuración',
+    about: 'Acerca de',
+  },
+
+  calculators: {
+    mechanicalPower: {
+      title: 'Potencia Mecánica',
+      description: 'Cálculo de la potencia mecánica ventilatoria',
+      rr: 'Frecuencia Respiratoria (RR)',
+      rrUnit: 'respiraciones/min',
+      vte: 'Volumen Corriente Espirado (VTe)',
+      vteUnit: 'litros',
+      picco: 'Presión Pico',
+      piccoUnit: 'cmH₂O',
+      plateau: 'Presión Meseta',
+      plateauUnit: 'cmH₂O',
+      peep: 'PEEP',
+      peepUnit: 'cmH₂O',
+      result: 'Potencia Mecánica',
+      resultUnit: 'J/min',
+      normalRange: 'Normal',
+      warningRange: 'Precaución',
+      criticalRange: 'Crítico',
+      referenceRanges: 'Rangos de referencia',
+    },
+    respiratoryQuotient: {
+      title: 'Cociente Respiratorio',
+      description: 'Cálculo del cociente respiratorio (QR)',
+      pvco2: 'PvCO₂ (CO₂ venoso)',
+      pvco2Unit: 'mmHg',
+      paco2: 'PaCO₂ (CO₂ arterial)',
+      paco2Unit: 'mmHg',
+      hb: 'Hemoglobina (HB)',
+      hbUnit: 'g/dL',
+      sao2: 'SaO₂ (saturación arterial)',
+      sao2Unit: '%',
+      svo2: 'SvO₂ (saturación venosa)',
+      svo2Unit: '%',
+      pao2: 'PaO₂ (O₂ arterial)',
+      pao2Unit: 'mmHg',
+      pvo2: 'PvO₂ (O₂ venoso)',
+      pvo2Unit: 'mmHg',
+      result: 'Cociente Respiratorio',
+      resultUnit: 'ml-O₂/dL',
+      normalRange: 'Normal (aeróbico)',
+      abnormalRange: 'Fuera de rango',
+      referenceRanges: 'Rangos de referencia',
+      metabolismTitle: 'QR - Tipo de metabolismo',
+      metabolismDescription:
+        'El cociente respiratorio indica el tipo de metabolismo (aeróbico o anaeróbico) basado en el consumo de sustratos energéticos',
+      fatMetabolism: 'Metabolismo de grasas (aeróbico)',
+      mixedMetabolism: 'Metabolismo mixto',
+      carbMetabolism: 'Metabolismo de carbohidratos (aeróbico)',
+      anaerobicMetabolism: 'Metabolismo anaeróbico',
+    },
+  },
+
+  validation: {
+    required: 'Campo obligatorio',
+    mustBePositive: 'Debe ser mayor que cero',
+    outOfRange: 'Valor fuera del rango permitido',
+    invalidNumber: 'Número inválido',
+    noNegativeNumbers: 'No se permiten valores negativos',
+    maxDecimals: 'Demasiados decimales',
+    maxPercentage: 'El porcentaje no puede exceder el 100%',
+    plateauLessThanPeak: 'Plateau debe ser ≤ Presión Pico',
+    peepLessThanPlateau: 'PEEP debe ser ≤ Plateau',
+    pvco2GreaterThanPaco2: 'PvCO₂ debe ser > PaCO₂',
+    sao2GreaterThanSvo2: 'SaO₂ debe ser > SvO₂',
+    pao2GreaterThanPvo2: 'PaO₂ debe ser > PvO₂',
+  },
+
+  errors: {
+    calculationFailed: 'Error en el cálculo',
+    invalidInput: 'Entrada inválida',
+    missingParameters: 'Parámetros faltantes',
+  },
+};

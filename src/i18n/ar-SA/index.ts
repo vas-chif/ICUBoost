@@ -1,0 +1,103 @@
+/**
+ * Arabic translations for ICUBoost
+ * الترجمة العربية لـ ICUBoost
+ */
+
+export default {
+  common: {
+    search: 'بحث',
+    calculate: 'احسب',
+    reset: 'إعادة تعيين',
+    close: 'إغلاق',
+    save: 'حفظ',
+    cancel: 'إلغاء',
+    error: 'خطأ',
+    success: 'نجح',
+    warning: 'تحذير',
+    info: 'معلومات',
+  },
+
+  layout: {
+    appName: 'ICUBoost',
+    appDescription: 'أدوات العناية المركزة',
+    menu: 'القائمة',
+    home: 'الرئيسية',
+    calculators: 'الحاسبات',
+    settings: 'الإعدادات',
+    about: 'حول',
+  },
+
+  calculators: {
+    mechanicalPower: {
+      title: 'القوة الميكانيكية',
+      description: 'حساب القوة الميكانيكية للتهوية',
+      rr: 'معدل التنفس (RR)',
+      rrUnit: 'نفس/دقيقة',
+      vte: 'حجم المد الزفيري (VTe)',
+      vteUnit: 'لتر',
+      picco: 'ضغط الذروة',
+      piccoUnit: 'سم ماء',
+      plateau: 'ضغط الهضبة',
+      plateauUnit: 'سم ماء',
+      peep: 'PEEP',
+      peepUnit: 'سم ماء',
+      result: 'القوة الميكانيكية',
+      resultUnit: 'جول/دقيقة',
+      normalRange: 'طبيعي',
+      warningRange: 'تحذير',
+      criticalRange: 'حرج',
+      referenceRanges: 'النطاقات المرجعية',
+    },
+    respiratoryQuotient: {
+      title: 'المعامل التنفسي',
+      description: 'حساب المعامل التنفسي (QR)',
+      pvco2: 'PvCO₂ (ثاني أكسيد الكربون الوريدي)',
+      pvco2Unit: 'ملم زئبق',
+      paco2: 'PaCO₂ (ثاني أكسيد الكربون الشرياني)',
+      paco2Unit: 'ملم زئبق',
+      hb: 'الهيموجلوبين (HB)',
+      hbUnit: 'جم/ديسيلتر',
+      sao2: 'SaO₂ (تشبع الأكسجين الشرياني)',
+      sao2Unit: '%',
+      svo2: 'SvO₂ (تشبع الأكسجين الوريدي)',
+      svo2Unit: '%',
+      pao2: 'PaO₂ (الأكسجين الشرياني)',
+      pao2Unit: 'ملم زئبق',
+      pvo2: 'PvO₂ (الأكسجين الوريدي)',
+      pvo2Unit: 'ملم زئبق',
+      result: 'المعامل التنفسي',
+      resultUnit: 'مل-أكسجين/ديسيلتر',
+      normalRange: 'طبيعي (هوائي)',
+      abnormalRange: 'خارج النطاق',
+      referenceRanges: 'النطاقات المرجعية',
+      metabolismTitle: 'QR - نوع الأيض',
+      metabolismDescription:
+        'يشير المعامل التنفسي إلى نوع الأيض (هوائي أو لاهوائي) بناءً على استهلاك ركائز الطاقة',
+      fatMetabolism: 'أيض الدهون (هوائي)',
+      mixedMetabolism: 'أيض مختلط',
+      carbMetabolism: 'أيض الكربوهيدرات (هوائي)',
+      anaerobicMetabolism: 'أيض لاهوائي',
+    },
+  },
+
+  validation: {
+    required: 'حقل مطلوب',
+    mustBePositive: 'يجب أن يكون أكبر من الصفر',
+    outOfRange: 'القيمة خارج النطاق المسموح',
+    invalidNumber: 'رقم غير صالح',
+    noNegativeNumbers: 'القيم السالبة غير مسموح بها',
+    maxDecimals: 'عدد كبير جدًا من المنازل العشرية',
+    maxPercentage: 'لا يمكن أن تتجاوز النسبة المئوية 100%',
+    plateauLessThanPeak: 'يجب أن يكون Plateau ≤ ضغط الذروة',
+    peepLessThanPlateau: 'يجب أن يكون PEEP ≤ Plateau',
+    pvco2GreaterThanPaco2: 'يجب أن يكون PvCO₂ > PaCO₂',
+    sao2GreaterThanSvo2: 'يجب أن يكون SaO₂ > SvO₂',
+    pao2GreaterThanPvo2: 'يجب أن يكون PaO₂ > PvO₂',
+  },
+
+  errors: {
+    calculationFailed: 'خطأ في الحساب',
+    invalidInput: 'إدخال غير صالح',
+    missingParameters: 'معاملات مفقودة',
+  },
+};

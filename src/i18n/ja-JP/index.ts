@@ -1,0 +1,103 @@
+/**
+ * Japanese translations for ICUBoost
+ * ICUBoostの日本語翻訳
+ */
+
+export default {
+  common: {
+    search: '検索',
+    calculate: '計算',
+    reset: 'リセット',
+    close: '閉じる',
+    save: '保存',
+    cancel: 'キャンセル',
+    error: 'エラー',
+    success: '成功',
+    warning: '警告',
+    info: '情報',
+  },
+
+  layout: {
+    appName: 'ICUBoost',
+    appDescription: '集中治療用ツール',
+    menu: 'メニュー',
+    home: 'ホーム',
+    calculators: '計算機',
+    settings: '設定',
+    about: '情報',
+  },
+
+  calculators: {
+    mechanicalPower: {
+      title: '機械的パワー',
+      description: '機械的換気パワーの計算',
+      rr: '呼吸回数 (RR)',
+      rrUnit: '回/分',
+      vte: '呼気一回換気量 (VTe)',
+      vteUnit: 'リットル',
+      picco: '最高気道内圧',
+      piccoUnit: 'cmH₂O',
+      plateau: 'プラトー圧',
+      plateauUnit: 'cmH₂O',
+      peep: 'PEEP',
+      peepUnit: 'cmH₂O',
+      result: '機械的パワー',
+      resultUnit: 'J/分',
+      normalRange: '正常',
+      warningRange: '注意',
+      criticalRange: '危険',
+      referenceRanges: '参照範囲',
+    },
+    respiratoryQuotient: {
+      title: '呼吸商',
+      description: '呼吸商 (QR) の計算',
+      pvco2: 'PvCO₂ (静脈血CO₂)',
+      pvco2Unit: 'mmHg',
+      paco2: 'PaCO₂ (動脈血CO₂)',
+      paco2Unit: 'mmHg',
+      hb: 'ヘモグロビン (HB)',
+      hbUnit: 'g/dL',
+      sao2: 'SaO₂ (動脈血酸素飽和度)',
+      sao2Unit: '%',
+      svo2: 'SvO₂ (静脈血酸素飽和度)',
+      svo2Unit: '%',
+      pao2: 'PaO₂ (動脈血酸素分圧)',
+      pao2Unit: 'mmHg',
+      pvo2: 'PvO₂ (静脈血酸素分圧)',
+      pvo2Unit: 'mmHg',
+      result: '呼吸商',
+      resultUnit: 'ml-O₂/dL',
+      normalRange: '正常（好気性）',
+      abnormalRange: '範囲外',
+      referenceRanges: '参照範囲',
+      metabolismTitle: 'QR - 代謝タイプ',
+      metabolismDescription:
+        '呼吸商は、エネルギー基質の消費に基づく代謝のタイプ（好気性または嫌気性）を示します',
+      fatMetabolism: '脂肪代謝（好気性）',
+      mixedMetabolism: '混合代謝',
+      carbMetabolism: '炭水化物代謝（好気性）',
+      anaerobicMetabolism: '嫌気性代謝',
+    },
+  },
+
+  validation: {
+    required: '必須項目',
+    mustBePositive: 'ゼロより大きい値を入力してください',
+    outOfRange: '許容範囲外の値',
+    invalidNumber: '無効な数値',
+    noNegativeNumbers: '負の値は許可されていません',
+    maxDecimals: '小数点以下が多すぎます',
+    maxPercentage: 'パーセントは100%を超えることはできません',
+    plateauLessThanPeak: 'PlateauはPeak圧以下である必要があります',
+    peepLessThanPlateau: 'PEEPはPlateau以下である必要があります',
+    pvco2GreaterThanPaco2: 'PvCO₂はPaCO₂より大きい必要があります',
+    sao2GreaterThanSvo2: 'SaO₂はSvO₂より大きい必要があります',
+    pao2GreaterThanPvo2: 'PaO₂はPvO₂より大きい必要があります',
+  },
+
+  errors: {
+    calculationFailed: '計算エラー',
+    invalidInput: '無効な入力',
+    missingParameters: 'パラメータが不足しています',
+  },
+};

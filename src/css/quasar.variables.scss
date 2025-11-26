@@ -8,18 +8,26 @@
 // Your own variables (that are declared here) and Quasar's own
 // ones will be available out of the box in your .vue/.scss/.sass files
 
-// It's highly recommended to change the default colors
-// to match your app's branding.
-// Tip: Use the "Theme Builder" on Quasar's documentation website.
+// ICUBoost Medical App - Color Palette from Logo
+// Primary: Dark blue from lungs illustration
+// Secondary: Cyan/teal from vital signs line
+// Medical-themed colors for critical care app
 
-$primary: #1976d2;
-$secondary: #26a69a;
-$accent: #9c27b0;
+$primary: #2c4a6e; // Dark blue (logo lungs)
+$secondary: #00bcd4; // Cyan (logo vital line)
+$accent: #4fc3f7; // Light blue accent
 
 $dark: #1d1d1d;
 $dark-page: #121212;
 
-$positive: #21ba45;
-$negative: #c10015;
-$info: #31ccec;
-$warning: #f2c037;
+// Medical status colors
+$positive: #4caf50; // Medical green (normal/good)
+$negative: #f44336; // Medical red (critical/alert)
+$info: #00bcd4; // Info cyan (matches secondary)
+$warning: #ff9800; // Medical orange (caution)
+
+// Custom ICU theme colors
+$medical-critical: #d32f2f; // Critical red
+$medical-warning: #ff9800; // Warning orange
+$medical-normal: #4caf50; // Normal green
+$medical-info: #2196f3; // Info blue
