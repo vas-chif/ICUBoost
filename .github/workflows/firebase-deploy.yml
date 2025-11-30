@@ -14,12 +14,12 @@
 
 name: Deploy to Firebase Hosting
 
-# Trigger: esegui workflow solo su push a branch main
+# Trigger: solo manuale (disabilitato auto-deploy su push)
 on:
-  push:
-    branches:
-      - main
-  # Opzionale: abilita deploy manuale da GitHub UI
+  # push:
+  #   branches:
+  #     - main
+  # Deploy manuale da GitHub UI
   workflow_dispatch:
 
 jobs:
