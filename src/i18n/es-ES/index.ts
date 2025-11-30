@@ -15,6 +15,13 @@ export default {
     success: 'Éxito',
     warning: 'Advertencia',
     info: 'Información',
+    patientInitials: 'Iniciales del paciente (máx 2 caracteres)',
+    savedCalculations: 'Cálculos guardados',
+    date: 'Fecha',
+    time: 'Hora',
+    result: 'Resultado',
+    actions: 'Acciones',
+    enablePhysiologicalValidations: 'Activar validaciones fisiológicas',
   },
 
   layout: {
@@ -31,6 +38,8 @@ export default {
     mechanicalPower: {
       title: 'Potencia Mecánica',
       description: 'Cálculo de la potencia mecánica ventilatoria',
+      longDescription:
+        'Energía transmitida del ventilador al sistema respiratorio por unidad de tiempo (julios/min)',
       rr: 'Frecuencia Respiratoria (RR)',
       rrUnit: 'respiraciones/min',
       vte: 'Volumen Corriente Espirado (VTe)',
@@ -51,6 +60,8 @@ export default {
     respiratoryQuotient: {
       title: 'Cociente Respiratorio',
       description: 'Cálculo del cociente respiratorio (QR)',
+      longDescription:
+        'El Cociente Respiratorio expresa el tipo de metabolismo en curso (aerobio o anaerobio) expresado por la relación entre el dióxido de carbono producido y el oxígeno consumido',
       pvco2: 'PvCO₂ (CO₂ venoso)',
       pvco2Unit: 'mmHg',
       paco2: 'PaCO₂ (CO₂ arterial)',

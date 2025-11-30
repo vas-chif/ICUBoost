@@ -1,0 +1,30 @@
+# <type>(<scope>): <subject> (max 72 chars)
+# |<----  Using a Maximum Of 72 Characters  ---->|
+
+# Explain why this change is being made
+# |<----   Try To Limit Each Line to a Maximum Of 72 Characters   ---->|
+
+# Provide links or keys to any relevant tickets, articles or other resources
+# Example: Closes #23, Refs #42
+
+# --- COMMIT END ---
+# Type can be:
+#    feat     (new feature)
+#    fix      (bug fix)
+#    refactor (refactoring production code)
+#    style    (formatting, missing semi colons, etc; no code change)
+#    docs     (changes to documentation)
+#    test     (adding or refactoring tests; no production code change)
+#    chore    (updating build tasks, package manager configs, etc)
+#    perf     (performance improvements)
+#    ci       (CI/CD pipeline changes)
+#    build    (build system or dependencies)
+#    i18n     (internationalization/translations)
+# --------------------
+# Remember to:
+#   - Use imperative mood (add, fix, update not added, fixed, updated)
+#   - Don't capitalize first letter after colon
+#   - No dot (.) at the end of subject
+#   - Separate subject from body with a blank line
+#   - Wrap body at 72 characters
+# --------------------

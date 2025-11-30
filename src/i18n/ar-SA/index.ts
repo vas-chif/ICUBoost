@@ -15,6 +15,13 @@ export default {
     success: 'نجح',
     warning: 'تحذير',
     info: 'معلومات',
+    patientInitials: 'الأحرف الأولى للمريض (حد أقصى حرفان)',
+    savedCalculations: 'الحسابات المحفوظة',
+    date: 'التاريخ',
+    time: 'الوقت',
+    result: 'النتيجة',
+    actions: 'الإجراءات',
+    enablePhysiologicalValidations: 'تفعيل التحققات الفسيولوجية',
   },
 
   layout: {
@@ -30,7 +37,9 @@ export default {
   calculators: {
     mechanicalPower: {
       title: 'القوة الميكانيكية',
-      description: 'حساب القوة الميكانيكية للتهوية',
+      description: 'حساب قوة التهوية الميكانيكية',
+      longDescription:
+        'الطاقة المنقولة من جهاز التنفس الصناعي إلى الجهاز التنفسي في وحدة الزمن (جول/دقيقة)',
       rr: 'معدل التنفس (RR)',
       rrUnit: 'نفس/دقيقة',
       vte: 'حجم المد الزفيري (VTe)',
@@ -51,6 +60,8 @@ export default {
     respiratoryQuotient: {
       title: 'المعامل التنفسي',
       description: 'حساب المعامل التنفسي (QR)',
+      longDescription:
+        'يعبر معامل التنفس عن نوع الأيض الجاري (هوائي أو لاهوائي) معبرًا عنه بنسبة ثاني أكسيد الكربون المنتج إلى الأكسجين المستهلك',
       pvco2: 'PvCO₂ (ثاني أكسيد الكربون الوريدي)',
       pvco2Unit: 'ملم زئبق',
       paco2: 'PaCO₂ (ثاني أكسيد الكربون الشرياني)',

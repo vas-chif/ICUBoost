@@ -1,0 +1,68 @@
+name: Android APK Build
+
+on:
+  workflow_dispatch: # Manual trigger
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'src-capacitor/**'
+      - 'package.json'
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Capacitor dependencies
+        run: |
+          yarn add @capacitor/core @capacitor/cli
+          npx cap sync android
+
+      - name: Build Quasar app
+        run: quasar build -m capacitor
+
+      - name: Build Android APK (Debug)
+        run: |
+          cd src-capacitor/android
+          chmod +x ./gradlew
+          ./gradlew assembleDebug
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-apk
+          path: src-capacitor/android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30
+
+      - name: Create Release (optional)
+        if: github.event_name == 'workflow_dispatch'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ github.run_number }}
+          name: Debug Build ${{ github.run_number }}
+          files: src-capacitor/android/app/build/outputs/apk/debug/app-debug.apk
+          draft: false
+          prerelease: true

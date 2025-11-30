@@ -13,8 +13,15 @@ export default {
     cancel: 'Anulează',
     error: 'Eroare',
     success: 'Succes',
-    warning: 'Atenție',
+    warning: 'Avertizare',
     info: 'Informație',
+    patientInitials: 'Inițiale pacient (max 2 caractere)',
+    savedCalculations: 'Calcule salvate',
+    date: 'Data',
+    time: 'Ora',
+    result: 'Rezultat',
+    actions: 'Acțiuni',
+    enablePhysiologicalValidations: 'Activează validările fiziologice',
   },
 
   layout: {
@@ -31,6 +38,8 @@ export default {
     mechanicalPower: {
       title: 'Putere Mecanică',
       description: 'Calculul puterii mecanice ventilatorii',
+      longDescription:
+        'Energia transmisă de la ventilator la sistemul respirator pe unitatea de timp (jouli/min)',
       rr: 'Frecvență respiratorie (RR)',
       rrUnit: 'respirații/min',
       vte: 'Volum curent expirat (VTe)',
@@ -51,6 +60,8 @@ export default {
     respiratoryQuotient: {
       title: 'Coeficient Respirator',
       description: 'Calculul coeficientului respirator (QR)',
+      longDescription:
+        'Coeficientul Respirator exprimă tipul de metabolism în curs (aerob sau anaerob) exprimat prin raportul dintre dioxidul de carbon produs și oxigenul consumat',
       pvco2: 'PvCO₂ (CO₂ venos)',
       pvco2Unit: 'mmHg',
       paco2: 'PaCO₂ (CO₂ arterial)',

@@ -15,6 +15,13 @@ export default {
     success: 'Success',
     warning: 'Warning',
     info: 'Information',
+    patientInitials: 'Patient Initials (max 2 chars)',
+    savedCalculations: 'Saved Calculations',
+    date: 'Date',
+    time: 'Time',
+    result: 'Result',
+    actions: 'Actions',
+    enablePhysiologicalValidations: 'Enable Physiological Validations',
   },
 
   layout: {
@@ -31,6 +38,8 @@ export default {
     mechanicalPower: {
       title: 'Mechanical Power',
       description: 'Calculation of mechanical ventilation power',
+      longDescription:
+        'Energy transmitted from the ventilator to the respiratory system per unit of time (joules/min)',
       rr: 'Respiratory Rate (RR)',
       rrUnit: 'breaths/min',
       vte: 'Expired Tidal Volume (VTe)',
@@ -51,6 +60,8 @@ export default {
     respiratoryQuotient: {
       title: 'Respiratory Quotient',
       description: 'Calculation of respiratory quotient (QR)',
+      longDescription:
+        'The Respiratory Quotient expresses the type of metabolism in progress (aerobic or anaerobic) as the ratio between carbon dioxide produced and oxygen consumed',
       pvco2: 'PvCO₂ (venous CO₂)',
       pvco2Unit: 'mmHg',
       paco2: 'PaCO₂ (arterial CO₂)',

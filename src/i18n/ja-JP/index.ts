@@ -15,6 +15,13 @@ export default {
     success: '成功',
     warning: '警告',
     info: '情報',
+    patientInitials: '患者のイニシャル（最大2文字）',
+    savedCalculations: '保存された計算',
+    date: '日付',
+    time: '時刻',
+    result: '結果',
+    actions: '操作',
+    enablePhysiologicalValidations: '生理学的検証を有効にする',
   },
 
   layout: {
@@ -30,7 +37,8 @@ export default {
   calculators: {
     mechanicalPower: {
       title: '機械的パワー',
-      description: '機械的換気パワーの計算',
+      description: '機械換気パワーの計算',
+      longDescription: '人工呼吸器から呼吸器系に単位時間あたり伝達されるエネルギー（ジュール/分）',
       rr: '呼吸回数 (RR)',
       rrUnit: '回/分',
       vte: '呼気一回換気量 (VTe)',
@@ -50,7 +58,9 @@ export default {
     },
     respiratoryQuotient: {
       title: '呼吸商',
-      description: '呼吸商 (QR) の計算',
+      description: '呼吸商（QR）の計算',
+      longDescription:
+        '呼吸商は、進行中の代謝のタイプ（好気性または嫌気性）を表し、生成された二酸化炭素と消費された酸素の比率として表現されます',
       pvco2: 'PvCO₂ (静脈血CO₂)',
       pvco2Unit: 'mmHg',
       paco2: 'PaCO₂ (動脈血CO₂)',

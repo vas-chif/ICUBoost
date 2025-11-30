@@ -12,7 +12,7 @@
  */
 
 import { defineStore } from 'pinia';
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 export type CalculatorType = 'mechanical-power' | 'respiratory-quotient' | null;
 
@@ -30,6 +30,15 @@ export const useCalculatorStore = defineStore('calculator', () => {
    * - Single source of truth (no prop drilling)
    */
   const searchQuery = ref('');
+
+  const enablePhysiologicalValidations = ref(
+    localStorage.getItem('enablePhysiologicalValidations') !== 'false',
+  );
+
+  // Watch per salvare in localStorage
+  watch(enablePhysiologicalValidations, (newValue) => {
+    localStorage.setItem('enablePhysiologicalValidations', String(newValue));
+  });
 
   /**
    * Apre un calcolatore specifico
@@ -71,6 +80,7 @@ export const useCalculatorStore = defineStore('calculator', () => {
     activeCalculator,
     showDialog,
     searchQuery,
+    enablePhysiologicalValidations,
 
     // Actions
     openCalculator,

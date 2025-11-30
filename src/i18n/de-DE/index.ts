@@ -15,6 +15,13 @@ export default {
     success: 'Erfolg',
     warning: 'Warnung',
     info: 'Information',
+    patientInitials: 'Initialen des Patienten (max 2 Zeichen)',
+    savedCalculations: 'Gespeicherte Berechnungen',
+    date: 'Datum',
+    time: 'Zeit',
+    result: 'Ergebnis',
+    actions: 'Aktionen',
+    enablePhysiologicalValidations: 'Physiologische Validierungen aktivieren',
   },
 
   layout: {
@@ -31,6 +38,8 @@ export default {
     mechanicalPower: {
       title: 'Mechanische Leistung',
       description: 'Berechnung der mechanischen Beatmungsleistung',
+      longDescription:
+        'Vom Beatmungsgerät auf das Atmungssystem übertragene Energie pro Zeiteinheit (Joule/min)',
       rr: 'Atemfrequenz (RR)',
       rrUnit: 'Atemzüge/Min',
       vte: 'Exspiratorisches Tidalvolumen (VTe)',
@@ -51,6 +60,8 @@ export default {
     respiratoryQuotient: {
       title: 'Respiratorischer Quotient',
       description: 'Berechnung des respiratorischen Quotienten (QR)',
+      longDescription:
+        'Der Respiratorische Quotient drückt die Art des laufenden Stoffwechsels (aerob oder anaerob) aus, ausgedrückt durch das Verhältnis zwischen produziertem Kohlendioxid und verbrauchtem Sauerstoff',
       pvco2: 'PvCO₂ (venöses CO₂)',
       pvco2Unit: 'mmHg',
       paco2: 'PaCO₂ (arterielles CO₂)',

@@ -32,3 +32,164 @@ yarn-error.log*
 # local .env files
 .env.local*
 .env.firebase
+
+
+# MacOS files
+.DS_Store
+.AppleDouble
+.LSOverride 
+# Thumbnails
+._*
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+# Directories potentially created on remote AFP shares
+.AppleDB
+.AppleDesktop
+Network Trash Folder        
+Temporary Items
+.apdisk     
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db 
+# Folder config files
+Desktop.ini
+# Recycle Bin used on file shares
+$RECYCLE.BIN/   
+# VS Code settings
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+# Local History for VS Code
+.history/
+
+# JetBrains IDEs
+.idea/
+*.iml
+out/
+# End of https://www.toptal.com/developers/gitignore/api:node,macos,windows,visualstudiocode,jetbrains  
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,macos,windows,visualstudiocode,jetbrains   
+# Firebase cache
+.firebase/  
+.firebaserc
+# Firebase functions node modules
+functions/node_modules/
+# Firebase functions lib build
+functions/lib/
+# Firebase functions env files
+functions/.env.local
+functions/.env.production
+functions/.env.testing
+functions/.env.development
+functions/.env.staging
+functions/.env.production.local
+functions/.env.testing.local
+functions/.env.development.local
+functions/.env.staging.local    
+# Firebase admin sdk private key
+functions/firebase-adminsdk-*.json  
+# Expo files
+.expo/
+.expo-shared/
+# SvelteKit build
+.build/
+.svelte-kit/    
+# TypeScript cache
+*.tsbuildinfo       
+# Log files
+logs
+*.log
+npm-debug.log**
+yarn-debug.log**
+yarn-error.log*
+pnpm-debug.log**    
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+# Local npm cache
+.npm
+# Local pnpm store
+.pnpm-store/
+# Local yarn cache
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarn/patches
+.yarn/releases
+.yarn/plugins
+.yarn/sdks  
+.yarn/versions
+# Optional eslint cache
+.eslintcache
+# Optional stylelint cache
+.stylelintcache
+# SvelteKit environment variables
+.env
+.env.*.local
+.env.local          
+.env.production
+.env.testing
+.env.development
+.env.staging
+.env.production.local
+.env.testing.local
+.env.development.local
+.env.staging.local
+
+# Firebase environment variables
+.env.firebase   
+.env.firebase.local
+.env.firebase.production
+.env.firebase.testing
+.env.firebase.development
+.env.firebase.staging
+.env.firebase.production.local
+.env.firebase.testing.local
+.env.firebase.development.local
+.env.firebase.staging.local 
+# Storybook environment variables
+.env.storybook
+.env.storybook.local
+.env.storybook.production
+.env.storybook.testing
+.env.storybook.development
+.env.storybook.staging
+.env.storybook.production.local
+.env.storybook.testing.local    
+.env.storybook.development.local
+.env.storybook.staging.local        
+
+# Vite environment variables
+.env.vite
+.env.vite.local
+.env.vite.production
+.env.vite.testing
+.env.vite.development
+.env.vite.staging
+.env.vite.production.local
+.env.vite.testing.local    
+.env.vite.development.local
+.env.vite.staging.local       
+# Quasar environment variables      
+.env.quasar
+.env.quasar.local
+.env.quasar.production
+.env.quasar.testing
+.env.quasar.development     
+.env.quasar.staging
+.env.quasar.production.local
+.env.quasar.testing.local    
+.env.quasar.development.local
+.env.quasar.staging.local
+# Firebase functions environment variables
+functions/.env
+functions/.env.*.local          
+
+# informative
+/informative
+
+# Ios Block
+.github/workflows/ios-build.yml

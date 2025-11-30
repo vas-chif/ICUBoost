@@ -16,6 +16,13 @@ export default {
     success: 'Successo',
     warning: 'Attenzione',
     info: 'Informazione',
+    patientInitials: 'Iniziali Paziente (max 2 caratteri)',
+    savedCalculations: 'Calcoli Salvati',
+    date: 'Data',
+    time: 'Ora',
+    result: 'Risultato',
+    actions: 'Azioni',
+    enablePhysiologicalValidations: 'Abilita Validazioni Fisiologiche',
   },
 
   // App layout
@@ -34,6 +41,8 @@ export default {
     mechanicalPower: {
       title: 'Mechanical Power',
       description: 'Calcolo della potenza meccanica ventilatoria',
+      longDescription:
+        "Energia trasmessa dal ventilatore al sistema respiratorio nell'unità di tempo (joule/min)",
       rr: 'Frequenza Respiratoria (RR)',
       rrUnit: 'atti/min',
       vte: 'Volume Corrente Espirato (VTe)',
@@ -54,6 +63,8 @@ export default {
     respiratoryQuotient: {
       title: 'Quoziente Respiratorio',
       description: 'Calcolo del quoziente respiratorio (QR)',
+      longDescription:
+        'Il Quoziente Respiratorio esprime il tipo di metabolismo in corso (aerobico o anaerobico) espresso dal rapporto tra anidride carbonica prodotta e ossigeno consumato',
       pvco2: 'PvCO₂ (CO₂ venosa)',
       pvco2Unit: 'mmHg',
       paco2: 'PaCO₂ (CO₂ arteriosa)',
@@ -75,7 +86,7 @@ export default {
       referenceRanges: 'Valori di Riferimento',
       metabolismTitle: 'QR - Tipo di Metabolismo',
       metabolismDescription:
-        'Il Quoziente Respiratorio esprime il tipo di metabolismo in corso (aerobico o anaerobico) in base al consumo di substrati energetici',
+        'Il Quoziente Respiratorio esprime il tipo di metabolismo in corso (aerobico o anaerobico) espresso dal rapporto tra anidride carbonica prodotta e ossigeno consumato',
       fatMetabolism: 'Metabolismo lipidico (aerobico)',
       mixedMetabolism: 'Metabolismo misto',
       carbMetabolism: 'Metabolismo glucidico (aerobico)',
