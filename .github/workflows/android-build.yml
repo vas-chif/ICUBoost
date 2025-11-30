@@ -1,14 +1,14 @@
 name: Android APK Build
 
 on:
-  workflow_dispatch: # Manual trigger
-  push:
-    branches:
-      - main
-    paths:
-      - 'src/**'
-      - 'src-capacitor/**'
-      - 'package.json'
+  workflow_dispatch: # Manual trigger only (disabled auto-trigger)
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - 'src/**'
+  #     - 'src-capacitor/**'
+  #     - 'package.json'
 
 jobs:
   build-android:
