@@ -315,7 +315,10 @@ function resetForm(): void {
       <q-card-section class="bg-secondary text-white row items-center q-pa-md">
         <div>
           <div class="text-h6">{{ t('calculators.respiratoryQuotient.title') }}</div>
-          <div class="text-caption">{{ t('calculators.respiratoryQuotient.description') }}</div>
+          <div class="text-caption">
+            <q-icon name="info" color="white" size="sm" class="q-mr-xs" />
+            {{ t('calculators.respiratoryQuotient.metabolismDescription') }}
+          </div>
         </div>
         <q-space />
         <div>
@@ -326,13 +329,6 @@ function resetForm(): void {
             :label="t('common.enablePhysiologicalValidations')"
             unchecked-icon="clear"
           />
-        </div>
-      </q-card-section>
-
-      <q-card-section class="q-pa-sm bg-blue-1">
-        <div class="text-body2 text-grey-9">
-          <q-icon name="info" color="primary" size="sm" class="q-mr-xs" />
-          {{ t('calculators.respiratoryQuotient.metabolismDescription') }}
         </div>
       </q-card-section>
 
