@@ -1,0 +1,14 @@
+{
+  "name": "icuboost-capacitor",
+  "version": "1.0.0",
+  "description": "ICUBoost Mobile App",
+  "author": "vas-chif",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "^7.4.4",
+    "@capacitor/app": "^7.0.0",
+    "@capacitor/cli": "^7.4.4",
+    "@capacitor/core": "^7.4.4",
+    "@capacitor/splash-screen": "^7.0.0"
+  }
+}

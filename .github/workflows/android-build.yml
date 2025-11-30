@@ -13,7 +13,7 @@ on:
 jobs:
   build-android:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -27,6 +27,19 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      - name: Install Capacitor dependencies in src-capacitor
+        run: |
+          cd src-capacitor
+          yarn install
+
+      - name: Build Quasar SPA
+        run: yarn build
+
+      - name: Copy build to Capacitor
+        run: |
+          mkdir -p src-capacitor/www
+          cp -r dist/spa/* src-capacitor/www/
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -36,13 +49,11 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install Capacitor dependencies
+      - name: Add Android platform and sync
         run: |
-          yarn add @capacitor/core @capacitor/cli
+          cd src-capacitor
+          npx cap add android
           npx cap sync android
-
-      - name: Build Quasar app
-        run: quasar build -m capacitor
 
       - name: Build Android APK (Debug)
         run: |
@@ -56,13 +67,3 @@ jobs:
           name: app-debug-apk
           path: src-capacitor/android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 30
-
-      - name: Create Release (optional)
-        if: github.event_name == 'workflow_dispatch'
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: v${{ github.run_number }}
-          name: Debug Build ${{ github.run_number }}
-          files: src-capacitor/android/app/build/outputs/apk/debug/app-debug.apk
-          draft: false
-          prerelease: true

@@ -1,0 +1,8 @@
+{
+  "appId": "com.icuboost.app",
+  "appName": "ICUBoost",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
