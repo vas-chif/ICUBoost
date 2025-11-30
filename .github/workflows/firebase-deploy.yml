@@ -46,21 +46,11 @@ jobs:
       - name: 🏗️ Build Quasar app
         run: yarn build
 
-      # Step 5: Deploy su Firebase (richiede FIREBASE_TOKEN secret)
+      # Step 5: Deploy su Firebase (richiede FIREBASE_TOKEN_ICUBOOST secret)
       - name: 🚀 Deploy to Firebase Hosting
-        if: github.ref == 'refs/heads/main' && secrets.FIREBASE_TOKEN_ICUBOOST != ''
+        if: github.ref == 'refs/heads/main'
         run: |
           npm install -g firebase-tools
           firebase deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN_ICUBOOST }}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN_ICUBOOST }}
-
-      # Step 6: Info se deploy saltato
-      - name: ℹ️ Deployment info
-        if: secrets.FIREBASE_TOKEN_ICUBOOST == ''
-        run: |
-          echo "⚠️ FIREBASE_TOKEN_ICUBOOST non configurato - deploy saltato"
-          echo "📝 Per abilitare deploy automatico:"
-          echo "   1. firebase login:ci (genera token)"
-          echo "   2. Aggiungi token come secret FIREBASE_TOKEN_ICUBOOST su GitHub"
-          echo "✅ Build completato con successo!"
