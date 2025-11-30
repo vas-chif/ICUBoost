@@ -42,9 +42,11 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install --frozen-lockfile
 
-      # Step 4: Build produzione
+      # Step 4: Build produzione (usa quasar build in modalità SPA)
       - name: 🏗️ Build Quasar app
-        run: yarn build
+        run: quasar build -m spa
+        env:
+          NODE_ENV: production
 
       # Step 5: Deploy su Firebase (richiede FIREBASE_TOKEN_ICUBOOST secret)
       - name: 🚀 Deploy to Firebase Hosting

@@ -33,7 +33,9 @@ jobs:
           yarn install
 
       - name: Build Quasar SPA
-        run: yarn build
+        run: quasar build -m spa
+        env:
+          NODE_ENV: production
 
       - name: Copy build to Capacitor
         run: |
