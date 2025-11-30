@@ -33,7 +33,7 @@ jobs:
           yarn install
 
       - name: Build Quasar SPA
-        run: quasar build -m spa
+        run: npx quasar build -m spa
         env:
           NODE_ENV: production
 
