@@ -332,6 +332,37 @@ function resetForm(): void {
           />
         </div>
       </q-card-section>
+      <q-card-section class="q-pa-sm bg-blue-1">
+        <div class="text-body2 text-grey-9">
+          <q-icon name="info" color="primary" size="sm" class="q-mr-xs" />
+          {{ t('calculators.mechanicalPower.longDescription') }}
+        </div>
+      </q-card-section>
+
+      <!-- Formula Expansion -->
+      <q-expansion-item
+        icon="calculate"
+        :label="t('calculators.mechanicalPower.showFormula') || 'Formula'"
+        header-class="bg-grey-2 text-grey-8"
+        dense
+      >
+        <q-card class="bg-grey-1">
+          <q-card-section class="q-pa-md">
+            <div class="text-subtitle2 text-grey-9 q-mb-sm">
+              {{ t('calculators.mechanicalPower.formulaTitle') }}
+            </div>
+            <div class="formula-box q-pa-md bg-white rounded-borders">
+              <div
+                class="text-h6 text-center text-primary q-mb-md"
+                style="font-family: 'Courier New', monospace"
+              >
+                MP = 0.098 × RR × VTe × (Ppicco - 0.5 × ΔP)
+              </div>
+              <q-separator class="q-my-sm" />
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
 
       <q-card-section>
         <div class="row q-col-gutter-md">
@@ -348,7 +379,7 @@ function resetForm(): void {
               placeholder="0"
               min="0"
               max="99"
-              oninput="if(this.value.length > 2) this.value = this.value.slice(0,2);"
+              oninput="if (this.value.length > 2) this.value = this.value.slice(0, 2);"
               :rules="[(val) => (val !== null && val > 0) || t('validation.mustBePositive')]"
             >
               <template #prepend>
@@ -389,7 +420,7 @@ function resetForm(): void {
               placeholder="0"
               min="0"
               max="99"
-              oninput="if(this.value.length > 2) this.value = this.value.slice(0,2);"
+              oninput="if (this.value.length > 2) this.value = this.value.slice(0, 2);"
               :rules="[(val) => (val !== null && val > 0) || t('validation.mustBePositive')]"
             >
               <template #prepend>
@@ -411,7 +442,7 @@ function resetForm(): void {
               placeholder="0"
               min="0"
               max="99"
-              oninput="if(this.value.length > 2) this.value = this.value.slice(0,2);"
+              oninput="if (this.value.length > 2) this.value = this.value.slice(0, 2);"
               :rules="[(val) => (val !== null && val > 0) || t('validation.mustBePositive')]"
             >
               <template #prepend>
@@ -433,7 +464,7 @@ function resetForm(): void {
               placeholder="0"
               min="0"
               max="99"
-              oninput="if(this.value.length > 2) this.value = this.value.slice(0,2);"
+              oninput="if (this.value.length > 2) this.value = this.value.slice(0, 2);"
               :rules="[(val) => (val !== null && val >= 0) || t('validation.mustBePositive')]"
             >
               <template #prepend>

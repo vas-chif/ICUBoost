@@ -125,7 +125,16 @@
     </q-header>
 
     <!-- Drawer Navigation -->
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered overlay>
+    <q-drawer
+      v-model="leftDrawerOpen"
+      show-if-above
+      class="license-drawer"
+      style="max-height: 680px"
+      :width="260"
+      :breakpoint="500"
+      bordered
+      behavior="mobile"
+    >
       <q-list>
         <q-item-label header class="text-primary">
           <q-icon name="calculate" class="q-mr-sm" />
@@ -209,6 +218,32 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-footer class="bg-grey-2 text-dark">
+      <div class="row no-wrap justify-center items-center text-center head-4-slim">
+        <!-- Prima riga: Copyright e credits -->
+        <div class="text-center text-caption text-grey-7 row no-wrap justify-center">
+          <div class="q-ma-xs q-pr-sm row no-wrap">
+            <q-icon name="copyright" size="xs" class="q-mr-xs" />
+            <p class="text-secondary q-ma-none q-mr-xl">2025 ICUboost</p>
+          </div>
+          <div class="q-ma-xs q-pl-sm">
+            <a
+              class="created-by caption text-secondary"
+              href="https://uniqueyouagency.com/#/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="text-decoration: none"
+            >
+              {{ t('layout.createdBy') }}
+              <span class="text-weight-bolder text-purple-10"
+                >Unique<span class="text-red-8">You</span>Agency</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </q-footer>
   </q-layout>
 </template>
 

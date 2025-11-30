@@ -26,12 +26,13 @@ export default {
 
   layout: {
     appName: 'ICUBoost',
-    appDescription: 'Herramientas para Cuidados Intensivos',
+    appDescription: 'Herramientas de Cuidados Intensivos',
     menu: 'Menú',
     home: 'Inicio',
     calculators: 'Calculadoras',
     settings: 'Configuración',
     about: 'Acerca de',
+    createdBy: 'Creado por',
   },
 
   calculators: {
@@ -55,7 +56,9 @@ export default {
       normalRange: 'Normal',
       warningRange: 'Precaución',
       criticalRange: 'Crítico',
-      referenceRanges: 'Rangos de referencia',
+      referenceRanges: 'Valores de Referencia',
+      showFormula: 'Fórmula',
+      formulaTitle: 'Fórmula',
     },
     respiratoryQuotient: {
       title: 'Cociente Respiratorio',
@@ -84,6 +87,8 @@ export default {
       metabolismTitle: 'QR - Tipo de metabolismo',
       metabolismDescription:
         'El cociente respiratorio indica el tipo de metabolismo (aeróbico o anaeróbico) basado en el consumo de sustratos energéticos',
+      showFormula: 'Fórmula',
+      formulaTitle: 'Fórmula',
       fatMetabolism: 'Metabolismo de grasas (aeróbico)',
       mixedMetabolism: 'Metabolismo mixto',
       carbMetabolism: 'Metabolismo de carbohidratos (aeróbico)',

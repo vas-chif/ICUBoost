@@ -32,6 +32,7 @@ export default {
     calculators: 'الحاسبات',
     settings: 'الإعدادات',
     about: 'حول',
+    createdBy: 'أنشئ بواسطة',
   },
 
   calculators: {
@@ -56,6 +57,8 @@ export default {
       warningRange: 'تحذير',
       criticalRange: 'حرج',
       referenceRanges: 'النطاقات المرجعية',
+      showFormula: 'الصيغة',
+      formulaTitle: 'الصيغة',
     },
     respiratoryQuotient: {
       title: 'المعامل التنفسي',
@@ -84,6 +87,8 @@ export default {
       metabolismTitle: 'QR - نوع الأيض',
       metabolismDescription:
         'يشير المعامل التنفسي إلى نوع الأيض (هوائي أو لاهوائي) بناءً على استهلاك ركائز الطاقة',
+      showFormula: 'الصيغة',
+      formulaTitle: 'الصيغة',
       fatMetabolism: 'أيض الدهون (هوائي)',
       mixedMetabolism: 'أيض مختلط',
       carbMetabolism: 'أيض الكربوهيدرات (هوائي)',

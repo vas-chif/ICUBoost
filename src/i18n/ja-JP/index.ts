@@ -26,12 +26,13 @@ export default {
 
   layout: {
     appName: 'ICUBoost',
-    appDescription: '集中治療用ツール',
+    appDescription: '集中治療ツール',
     menu: 'メニュー',
     home: 'ホーム',
     calculators: '計算機',
     settings: '設定',
     about: '情報',
+    createdBy: '作成者',
   },
 
   calculators: {
@@ -53,8 +54,10 @@ export default {
       resultUnit: 'J/分',
       normalRange: '正常',
       warningRange: '注意',
-      criticalRange: '危険',
-      referenceRanges: '参照範囲',
+      criticalRange: '急性',
+      referenceRanges: '基準範囲',
+      showFormula: '計算式',
+      formulaTitle: '計算式',
     },
     respiratoryQuotient: {
       title: '呼吸商',
@@ -82,8 +85,10 @@ export default {
       referenceRanges: '参照範囲',
       metabolismTitle: 'QR - 代謝タイプ',
       metabolismDescription:
-        '呼吸商は、エネルギー基質の消費に基づく代謝のタイプ（好気性または嫌気性）を示します',
-      fatMetabolism: '脂肪代謝（好気性）',
+        '呼吸商は、エネルギー基質の消費に基づいて代謝のタイプ（好気性または嫌気性）を示します',
+      showFormula: '計算式',
+      formulaTitle: '計算式',
+      fatMetabolism: '脂質代謝（好気性）',
       mixedMetabolism: '混合代謝',
       carbMetabolism: '炭水化物代謝（好気性）',
       anaerobicMetabolism: '嫌気性代謝',

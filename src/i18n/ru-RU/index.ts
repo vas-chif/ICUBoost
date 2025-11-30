@@ -26,12 +26,13 @@ export default {
 
   layout: {
     appName: 'ICUBoost',
-    appDescription: 'Инструменты для интенсивной терапии',
+    appDescription: 'Инструменты интенсивной терапии',
     menu: 'Меню',
     home: 'Главная',
     calculators: 'Калькуляторы',
     settings: 'Настройки',
     about: 'О программе',
+    createdBy: 'Создано',
   },
 
   calculators: {
@@ -56,6 +57,8 @@ export default {
       warningRange: 'Осторожно',
       criticalRange: 'Критично',
       referenceRanges: 'Референсные диапазоны',
+      showFormula: 'Формула',
+      formulaTitle: 'Формула',
     },
     respiratoryQuotient: {
       title: 'Дыхательный коэффициент',
@@ -84,6 +87,8 @@ export default {
       metabolismTitle: 'QR - Тип метаболизма',
       metabolismDescription:
         'Дыхательный коэффициент указывает на тип метаболизма (аэробный или анаэробный) на основе потребления энергетических субстратов',
+      showFormula: 'Формула',
+      formulaTitle: 'Формула',
       fatMetabolism: 'Метаболизм жиров (аэробный)',
       mixedMetabolism: 'Смешанный метаболизм',
       carbMetabolism: 'Метаболизм углеводов (аэробный)',

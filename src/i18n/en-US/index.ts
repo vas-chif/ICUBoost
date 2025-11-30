@@ -32,6 +32,7 @@ export default {
     calculators: 'Calculators',
     settings: 'Settings',
     about: 'About',
+    createdBy: 'Created by',
   },
 
   calculators: {
@@ -56,6 +57,8 @@ export default {
       warningRange: 'Caution',
       criticalRange: 'Critical',
       referenceRanges: 'Reference Ranges',
+      showFormula: 'Formula',
+      formulaTitle: 'Formula',
     },
     respiratoryQuotient: {
       title: 'Respiratory Quotient',
@@ -84,6 +87,8 @@ export default {
       metabolismTitle: 'QR - Metabolism Type',
       metabolismDescription:
         'Respiratory Quotient indicates the type of metabolism (aerobic or anaerobic) based on energy substrate consumption',
+      showFormula: 'Formula',
+      formulaTitle: 'Formula',
       fatMetabolism: 'Fat metabolism (aerobic)',
       mixedMetabolism: 'Mixed metabolism',
       carbMetabolism: 'Carbohydrate metabolism (aerobic)',

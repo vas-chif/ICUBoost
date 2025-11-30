@@ -32,6 +32,7 @@ export default {
     calculators: 'Rechner',
     settings: 'Einstellungen',
     about: 'Über',
+    createdBy: 'Erstellt von',
   },
 
   calculators: {
@@ -55,7 +56,9 @@ export default {
       normalRange: 'Normal',
       warningRange: 'Achtung',
       criticalRange: 'Kritisch',
-      referenceRanges: 'Referenzbereiche',
+      referenceRanges: 'Referenzwerte',
+      showFormula: 'Formel',
+      formulaTitle: 'Formel',
     },
     respiratoryQuotient: {
       title: 'Respiratorischer Quotient',
@@ -83,7 +86,9 @@ export default {
       referenceRanges: 'Referenzbereiche',
       metabolismTitle: 'QR - Stoffwechseltyp',
       metabolismDescription:
-        'Der respiratorische Quotient zeigt den Stoffwechseltyp (aerob oder anaerob) basierend auf dem Verbrauch von Energiesubstraten an',
+        'Der Respiratorische Quotient zeigt den Stoffwechseltyp (aerob oder anaerob) basierend auf dem Verbrauch der Energiesubstrate an',
+      showFormula: 'Formel',
+      formulaTitle: 'Formel',
       fatMetabolism: 'Fettstoffwechsel (aerob)',
       mixedMetabolism: 'Gemischter Stoffwechsel',
       carbMetabolism: 'Kohlenhydratstoffwechsel (aerob)',

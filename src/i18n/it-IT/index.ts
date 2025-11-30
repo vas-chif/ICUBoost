@@ -34,6 +34,7 @@ export default {
     calculators: 'Calcolatori',
     settings: 'Impostazioni',
     about: 'Info',
+    createdBy: 'Creato da',
   },
 
   // Calculators
@@ -59,6 +60,8 @@ export default {
       warningRange: 'Attenzione',
       criticalRange: 'Critico',
       referenceRanges: 'Valori di Riferimento',
+      showFormula: 'Formula',
+      formulaTitle: 'Formula',
     },
     respiratoryQuotient: {
       title: 'Quoziente Respiratorio',
@@ -87,6 +90,8 @@ export default {
       metabolismTitle: 'QR - Tipo di Metabolismo',
       metabolismDescription:
         'Il Quoziente Respiratorio esprime il tipo di metabolismo in corso (aerobico o anaerobico) espresso dal rapporto tra anidride carbonica prodotta e ossigeno consumato',
+      showFormula: 'Formula',
+      formulaTitle: 'Formula',
       fatMetabolism: 'Metabolismo lipidico (aerobico)',
       mixedMetabolism: 'Metabolismo misto',
       carbMetabolism: 'Metabolismo glucidico (aerobico)',

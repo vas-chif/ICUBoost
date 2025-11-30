@@ -26,12 +26,13 @@ export default {
 
   layout: {
     appName: 'ICUBoost',
-    appDescription: 'Ferramentas para Cuidados Intensivos',
+    appDescription: 'Ferramentas de Cuidados Intensivos',
     menu: 'Menu',
     home: 'Início',
     calculators: 'Calculadoras',
     settings: 'Definições',
     about: 'Sobre',
+    createdBy: 'Criado por',
   },
 
   calculators: {
@@ -56,6 +57,8 @@ export default {
       warningRange: 'Atenção',
       criticalRange: 'Crítico',
       referenceRanges: 'Intervalos de referência',
+      showFormula: 'Fórmula',
+      formulaTitle: 'Fórmula',
     },
     respiratoryQuotient: {
       title: 'Quociente Respiratório',
@@ -83,7 +86,9 @@ export default {
       referenceRanges: 'Intervalos de referência',
       metabolismTitle: 'QR - Tipo de metabolismo',
       metabolismDescription:
-        'O quociente respiratório indica o tipo de metabolismo (aeróbico ou anaeróbico) baseado no consumo de substratos energéticos',
+        'O quociente respiratório indica o tipo de metabolismo (aeróbico ou anaeróbico) com base no consumo de substratos energéticos',
+      showFormula: 'Fórmula',
+      formulaTitle: 'Fórmula',
       fatMetabolism: 'Metabolismo de gorduras (aeróbico)',
       mixedMetabolism: 'Metabolismo misto',
       carbMetabolism: 'Metabolismo de carboidratos (aeróbico)',

@@ -32,6 +32,7 @@ export default {
     calculators: 'Calculatoare',
     settings: 'Setări',
     about: 'Despre',
+    createdBy: 'Creat de',
   },
 
   calculators: {
@@ -55,7 +56,9 @@ export default {
       normalRange: 'Normal',
       warningRange: 'Atenție',
       criticalRange: 'Critic',
-      referenceRanges: 'Intervale de referință',
+      referenceRanges: 'Intervale de Referință',
+      showFormula: 'Formulă',
+      formulaTitle: 'Formulă',
     },
     respiratoryQuotient: {
       title: 'Coeficient Respirator',
@@ -83,7 +86,9 @@ export default {
       referenceRanges: 'Intervale de referință',
       metabolismTitle: 'QR - Tipul de metabolism',
       metabolismDescription:
-        'Coeficientul respirator indică tipul de metabolism (aerob sau anaerob) pe baza consumului de substraturi energetice',
+        'Coeficientul Respirator indică tipul de metabolism (aerob sau anaerob) pe baza consumului de substraturi energetice',
+      showFormula: 'Formulă',
+      formulaTitle: 'Formulă',
       fatMetabolism: 'Metabolism lipidic (aerob)',
       mixedMetabolism: 'Metabolism mixt',
       carbMetabolism: 'Metabolism glucidic (aerob)',

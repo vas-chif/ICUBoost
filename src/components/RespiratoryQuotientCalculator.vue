@@ -336,13 +336,33 @@ function resetForm(): void {
         </div>
       </q-card-section>
 
+      <!-- Formula Expansion -->
+      <q-expansion-item
+        icon="calculate"
+        :label="t('calculators.respiratoryQuotient.showFormula') || 'Formula'"
+        header-class="bg-grey-2 text-grey-8"
+        dense
+      >
+        <q-card class="bg-grey-1">
+          <q-card-section class="q-pa-md">
+            <div class="text-subtitle2 text-grey-9 q-mb-sm">
+              {{ t('calculators.respiratoryQuotient.formulaTitle') }}
+            </div>
+            <div class="formula-box q-pa-md bg-white rounded-borders">
+              <div
+                class="text-h6 text-center text-primary q-mb-md"
+                style="font-family: 'Courier New', monospace"
+              >
+                QR = (PvCO₂ - PaCO₂) / [(HB × 1.36 × (SaO₂ - SvO₂)) / 100 + (PaO₂ - PvO₂) × 0.003]
+              </div>
+              <q-separator class="q-my-sm" />
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+
       <q-card-section>
         <div class="row q-col-gutter-md">
-          <!-- CO2 Values -->
-          <div class="col-12">
-            <div class="text-subtitle2 text-grey-7 q-mb-sm">CO₂ Parameters</div>
-          </div>
-
           <div class="col-12 col-sm-6">
             <q-input
               v-model.number="pvco2"
@@ -417,7 +437,7 @@ function resetForm(): void {
               step="0.1"
               min="0"
               max="100"
-              oninput="if(this.value.length > 3) this.value = this.value.slice(0,3);"
+              oninput="if (this.value.length > 3) this.value = this.value.slice(0, 3);"
               :label="t('calculators.respiratoryQuotient.sao2')"
               :suffix="t('calculators.respiratoryQuotient.sao2Unit')"
               outlined
@@ -439,7 +459,7 @@ function resetForm(): void {
               step="0.1"
               min="0"
               max="100"
-              oninput="if(this.value.length > 3) this.value = this.value.slice(0,3);"
+              oninput="if (this.value.length > 3) this.value = this.value.slice(0, 3);"
               :label="t('calculators.respiratoryQuotient.svo2')"
               :suffix="t('calculators.respiratoryQuotient.svo2Unit')"
               outlined
