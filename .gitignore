@@ -191,5 +191,7 @@ functions/.env.*.local
 # informative
 /informative
 
-# Ios Block
+
+
 .github/workflows/ios-build.yml
+.github/workflows/test-android-build.yml
