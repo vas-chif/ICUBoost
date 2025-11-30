@@ -51,10 +51,9 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Add Android platform and sync
+      - name: Sync Capacitor with Android
         run: |
           cd src-capacitor
-          npx cap add android
           npx cap sync android
 
       - name: Build Android APK (Debug)
